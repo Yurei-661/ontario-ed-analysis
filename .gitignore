@@ -1,0 +1,22 @@
+# Python / Data Science
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Environment variables
+.env
