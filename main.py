@@ -7,4 +7,14 @@ df = pd.read_excel(data, sheet_name = "Table 1", header = 1, usecols = "A:H")
 df_clean = df.dropna(subset=["Indicator result"])
 df_clean = df_clean.drop(columns=["Region"])
 df_clean = df_clean[df_clean["Province"] == "Ontario"]
-print(df_clean.head(10))
+# print(df_clean.head(10))
+
+connection = sqlite3.connect("data/wait_times_data.db")
+df_clean.to_sql(
+    "wait_times", 
+    connection, 
+    if_exists="replace", 
+    index=False
+)
+
+connection.close()
